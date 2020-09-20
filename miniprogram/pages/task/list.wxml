@@ -1,0 +1,68 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}" bindtap="pageBack">
+  <view slot="backText">返回</view>
+  <view slot="content">我的任务</view>
+</cu-custom>
+<view class='maincontent'>
+  <view class='qie'>
+    <view class='hua'>
+      <picker bindchange="quChange" value="{{index}}" range="{{area}}">
+        <view class="picker">
+          {{area[index]}}
+        </view>
+      </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+  <view class='qie' wx:if="{{ac==3}}">
+    <view class='hua'>
+      <picker bindchange="typeChange" value="{{index}}" range="{{type}}">
+        <view class="picker">
+          {{type[index]}}
+        </view>
+      </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+  <view class='qie' wx:else>
+    <view class='hua'>
+      <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}"
+		 range="{{multiArray}}">
+        <view class="picker">
+            {{selectcat[1]}}
+        </view>
+		  </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+  <view class='qie'>
+    <view class='hua'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{time}}">
+        <view class="picker">
+          {{time[index]}}
+        </view>
+      </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+</view>
+<view class='hou'>
+  <view class='item' wx:for="{{tasklist}}" data-id="{{item._id}}" bindtap="detail">
+    <view class='l {{item.l}}'>
+      <view class='company'>{{item.catename}}</view>
+      <view class='dingwei'>
+        <image src='../../images/didian.png'></image>
+        <view class='address'>{{item.shi}} {{item.qu}}</view>
+      </view>
+      <view class='work_time'>工作时间：{{item.date1}}-{{item.date2}}</view>
+      <view class='money'>
+        工钱：
+        <text>{{item.money}}</text>元/人
+        <text wx:if="{{item.captain_fee}}"> (另需上交{{item.captain_fee}}元带班费)</text>
+      </view>
+    </view>
+    <view class='r {{item.r}}'>
+      <image src='cloud://lingqiange-yun.6c69-lingqiange-yun-1300812031/{{item.thumb}}'></image>
+    </view>
+  </view>
+
+</view>

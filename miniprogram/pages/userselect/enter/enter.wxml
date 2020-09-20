@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}">
+  <view slot="content">我要找工人</view>
+</cu-custom>
+<form bindsubmit="formSubmit" report-submit='true'>
+	<view class="cu-form-group">
+		<view class="title">发布方</view>
+		<input placeholder="请输入发布方名称" value="{{info.name}}" name="name"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">业务内容</view>
+		<input placeholder="请输入业务内容" value="{{info.yewu}}" name="yewu"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">派单区域</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">联系人</view>
+		<input placeholder="请输入联系人" value="{{info.realname}}" name="realname"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">详细地址</view>
+		<input placeholder="请输入详细地址" value="{{info.address}}" name="address"></input>
+    <text class="cuIcon-locationfill text-orange" bindtap='choosePlace'></text>
+	</view>
+  
+	<view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input placeholder="输入手机号码" name="phone" maxlength="11"  value="{{info.phone}}" type="number"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国
+			</view>
+		</view>
+	</view>
+  <!-- <view class="cu-form-group">
+		<view class="title">验证码</view>
+		<input placeholder="输入框带个按钮"></input>
+		<button class="cu-btn bg-green shadow yanzhengma">验证码</button>
+	</view> -->
+  <view class="btn_bottom">
+    <view class="cu-bar btn-group">
+      <button class="cu-btn bg-blue shadow-blur round lg" formType="submit">提交</button>
+    </view>
+  </view> 
+</form>
+

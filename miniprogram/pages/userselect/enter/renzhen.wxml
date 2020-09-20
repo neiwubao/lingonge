@@ -1,0 +1,18 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <block slot="backText">返回</block>
+  <view slot="content">雇主实名认证</view>
+</cu-custom>
+<view>
+  <view class="gr_btm">
+    <image src="{{renzhenpic}}"></image>
+    <view class="gr_txt">公司营业执照或者个体户执照</view>  
+  </view>
+  <view class="btn_bottom">
+    <view class="cu-bar btn-group">
+      <button class="cu-btn bg-blue shadow-blur round lg" wx:if="{{btnstatus == 0}}" bindtap="ChooseImage">点击上传</button>
+      <button class="cu-btn bg-blue shadow-blur round lg" wx:if="{{btnstatus == 1}}">上传中</button>
+      <button class="cu-btn bg-blue shadow-blur round lg" wx:if="{{btnstatus == 2}}">审核中</button>
+      <button class="cu-btn bg-blue shadow-blur round lg" wx:if="{{btnstatus == 3}}">审核通过</button>
+    </view>
+  </view>
+</view>

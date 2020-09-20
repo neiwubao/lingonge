@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-purple" isCustom="{{true}}">
+  <view slot="content">提现</view>
+</cu-custom>
+<view class='cash-withdrawal'>
+   <view class='nav acea-row'>
+        <view wx:for='{{navList}}' wx:key class='item font-color' data-current="{{index}}"  bindtap="swichNav">
+            <view class='line bg-color {{currentTab==index ? "on":""}}'></view>
+            <view class='iconfont {{item.icon}} {{currentTab==index ? "on":""}}'></view>
+            <view>{{item.name}}</view>
+        </view>
+    </view>
+     <view class='wrapper'>
+        
+        <view class='list'>
+          <form bindsubmit="subCash" report-submit='true'>
+             <view class='item acea-row row-between-wrapper'>
+                 <view class='name'>姓名</view>
+                 <view class='input'><input placeholder='请填写您的姓名' placeholder-class='placeholder' name="realname"></input></view>
+             </view>
+              <view class='item acea-row row-between-wrapper'>
+                 <view class='name'>提现</view>
+                 <view class='input'><input placeholder='请输入提现金额' placeholder-class='placeholder' name="money" type='digit'></input></view>
+             </view>
+             <view class='tip'>当前可提现金额: {{userInfo.money}}</view>
+             <button formType="submit" class='bnt bg-color'>提现</button>
+          </form>   
+        </view>
+        
+    </view>
+</view>

@@ -1,0 +1,156 @@
+<cu-custom bgColor="bg-gradual-purple">
+	<view slot="content">任务发布</view>
+</cu-custom>
+<form bindsubmit="formSubmit" report-submit='true'>
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			<text class="cuIcon-titles text-green"></text>
+			<text class="text-df text-bold">请选择任务类型</text>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">任务类型{{type_id}}</view>
+		<picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}"
+		 range="{{multiArray}}">
+			<view class="picker">
+				{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			<text class="cuIcon-titles text-green"></text>
+			<text class="text-df text-bold">具体任务简述</text>
+		</view>
+		<navigator url="/pages/task/moban">
+			<text class="action_fr">参考模板</text>
+		</navigator>
+	</view>
+	<view class="cu-form-group">
+		<textarea maxlength="-1" bindinput="textareaAInput" name="content" placeholder="请简单描述一下任务" value="{{content}}"></textarea>
+	</view>
+
+	<view class="cu-bar bg-white">
+		<view class="action">
+			相关图片
+		</view>
+		<view class="action">
+			{{imgList.length + imgList2.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList2}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList2[index]}}">
+				<image src='cloud://lingqiange-yun.6c69-lingqiange-yun-1300812031/{{imgList2[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg2" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length+imgList2.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+	
+	<view class="cu-form-group">
+		<view class="title">需要人数</view>
+		<input name='need' placeholder="请输入任务需要的人数" value="{{need}}" type="number" placeholder-class='rightinput'></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				人
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">工钱</view>
+		<input placeholder="请输入任务的工钱" confirm-type="next" value="{{money}}" name="money" type="digit" placeholder-class='rightinput'></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				元
+			</view>
+			<view class="cu-tag line-blue">
+				每人
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">任务区域</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">详细地点</view>
+		<input placeholder="选择详细地点" name="address" value="{{address}}" placeholder-class='rightinput'></input>
+		<text class="cuIcon-locationfill text-orange" bindtap='choosePlace'></text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">任务开始日期</view>
+		<picker mode="date" value="{{date}}" start="2020-01-01" end="2020-06-01" bindchange="DateChange">
+			<view class="picker">
+				{{date}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">费用支付方式</view>
+		<picker bindchange="PickerChange2" value="{{paytype}}" range="{{paytypes}}">
+			<view class="picker">
+				{{paytypes[paytype]}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">任务时长</view>
+		<picker bindchange="PickerChange" value="{{day}}" range="{{picker}}">
+			<view class="picker">
+				{{picker[day]}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group timegroup">
+		<view class="title">工作时长</view>
+		<picker mode="time" value="{{startime}}" start="09:01" end="22:00" bindchange="TimeChange1">
+			<view class="right">
+				{{startime}}
+			</view>
+		</picker>
+		到
+		<picker mode="time" value="{{endtime}}" start="09:01" end="22:00" bindchange="TimeChange2">
+			<view class="picker">
+				{{endtime}}
+			</view>
+		</picker>
+	</view>
+
+	<view style="height:180rpx;width:99%;margin:0 auto;backgroup:#111">
+		<view class="btn_bottom margin-top">
+			<view class="cu-bar btn-group" style="padding:40rpx">
+				<button class="cu-btn bg-blue shadow-blur round df" style="padding:40rpx" formType="submit">提交</button>
+			</view>
+		</view>
+	</view>
+</form>
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">{{msg.title}}</view>
+			<view class="action" bindtap="hideModal">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+		</view>
+		<view class="padding-xl">
+			{{msg.content}}
+		</view>
+	</view>
+</view>

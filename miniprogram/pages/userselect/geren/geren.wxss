@@ -1,0 +1,37 @@
+/* miniprogram/pages/userselect/geren/geren.wxss */
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.half{
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+.half image{
+  width: 120px;
+  height: 80px;
+}
+.gr_top{
+  margin-top: 50px; 
+  height: 150px;
+}
+.gr_btm{
+  text-align: center;
+  margin-top: 180px;
+}
+.gr_btm image{
+  width: 150px;
+  height: 100px;
+}
+.gr_txt{
+  font-size: 14px;
+}
+.btn_bottom{
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}

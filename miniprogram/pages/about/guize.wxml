@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">活动规则</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于红名单</view>
+  <view class='text-content'>
+    <view>零工哥</view>
+    <view class='margin-top-sm'>零工哥是深圳鼎泰华实业有限公司运营的专业零工劳务交易平台</view>
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>

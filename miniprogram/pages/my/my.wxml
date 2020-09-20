@@ -1,0 +1,105 @@
+<cu-custom bgColor="bg-gradual-purple">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view wx:if="{{iswork<3}}">
+<view class='ttop'>
+  <image src='../../images/dou_h.png'></image>
+  <view class='person'>
+    <image src='{{userinfo.avatarUrl}}'></image>
+    <view class='duizhang'>
+      <view>{{userinfo.nickName}}</view>
+      <view wx:if="{{iswork == 1}}">我是工人</view>
+      <view wx:if="{{iswork == 2}}">我是队长</view>
+    </view>
+    <view class="my-card-status" bindtap="goAuto">已实名</view>
+    <!-- <view class="dao" bindtap="goSign">签到</view> -->
+</view>
+<view style="height:22px"> </view>
+<view class='info'>
+      <view class='info_item' bindtap="gomytask" data-model="1">
+        <view>{{task.alltask}}</view>
+        <view>已接单</view>
+      </view>
+      <view class='info_item' bindtap="gomytask" data-model="2">
+        <view>{{task.dotask}}</view>
+        <view>任务中</view>
+      </view>
+      <view class='info_item' bindtap="gomytask" data-model="3">
+        <view>{{task.fintask}}</view>
+        <view>已完成</view>
+      </view>
+      <navigator class="info_item" wx:if="{{iswork==2}}" url="/pages/userselect/duiman/list">
+ 
+        <view>1</view>
+        <view>我的队员</view>
+     
+      </navigator>
+      
+    </view>
+  </view>
+  <view class='money'>
+    <view class='left'>
+      <view class='yuan my-money-title'>
+        <image src='../../images/dui_money.png'></image>
+        <view>账户金额（元）</view>
+      </view>
+      <view class='num'>{{money}}</view>
+    </view>
+    <view class='right my-post-wall' bindtap="goPostMoney">
+     我要提现
+    </view> 
+  </view>
+  <view class='kong'></view>
+  <view class='wan more-service'>
+    <view class='wan_top'>
+      <view class='one'></view>
+      <view class='two'></view>
+      <text>更多服务</text>
+      <view class='two'></view>
+      <view class='one'></view>
+    </view>
+    <view class='wan_bot'>
+      <block wx:for="{{myPerServiceList}}" wx:key>
+        <view class='wan_bot_item' bindtap="goPage" data-info="{{item}}" wx:if="{{item.iswork == iswork}}">
+          <image src='{{item.img}}'></image>
+          <view>{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view class='top'>
+  <image src='../../images/gr_tou.png' mode='aspectFill'>23132</image>
+  <image src='{{userinfo.avatarUrl}}' mode='aspectFill' class='two'>asa</image>
+  <view class="work-title-kong"></view>
+  <view class='work-title'>{{userinfo.nickName}}</view>
+    <view class="content-box-kong"></view>
+  <view class='content-box'>有任务需求，我要招工人</view> 
+</view>
+<view class="my-kong-20"></view>
+<view class='tab'>
+  <view class='tab_item'>
+    <image src='../../images/xing.png'></image>
+    <view>任务</view>
+    <text>{{company.publish?company.publish:0}}</text>
+  </view>
+  <navigator class='tab_item' url="/pages/userselect/duiman/list?ac=3">
+    <image src='../../images/gr_fensi.png'></image>
+    <view>工人</view>
+    <text>{{company.works?company.works:0}}</text>
+  </navigator>
+</view>
+<view class="my-kong-20"></view>
+<view class='task'>
+  <view class='task_item' bindtap="goPage" data-info="{{item}}" wx:for="{{myComServiceList}}" wx:key>
+    <view class='right'>
+      <view class='thumb'><image src='{{item.img}}'></image></view>
+      <text>{{item.name}}</text>
+      <view class='qian'></view>
+      <view class="notice" wx:if="{{item.id== 2 && msgnotice}}"><text>{{msgnotice}}</text></view>
+      <view class="notice" wx:if="{{item.id== 3 && msgnotice}}"><text>{{msgnotice}}</text></view>
+    </view>
+  </view>
+</view>
+</view>

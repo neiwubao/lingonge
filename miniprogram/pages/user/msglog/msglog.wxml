@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}" bindtap="pageBack">
+  <view slot="backText">返回</view>
+  <view slot="content">消息中心</view>
+</cu-custom>
+<view class="cu-timeline">
+  <view class="cu-item text-purple" wx:for="{{msglist}}">
+    <view class="bg-purple content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-purple">{{item.title}}</view>
+        <view class="cu-tag line-white">{{item.time}}</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view wx:for="{{item.content}}" wx:for-item="c">{{c}}</view>
+      </view>
+    </view>
+  </view>
+</view>

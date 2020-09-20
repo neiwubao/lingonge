@@ -1,0 +1,30 @@
+
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">钱包明细</view></cu-custom>
+<view class='bill-details'>
+   <view class='nav acea-row'>
+      <view class='item {{type==0 ? "on":""}}' data-type='0' bindtap='changeType'>全部</view>
+      <view class='item {{type==1 ? "on":""}}' data-type='1' bindtap='changeType'>收入</view>
+      <view class='item {{type==2 ? "on":""}}' data-type='2' bindtap='changeType'>提现</view>
+   </view>
+   <view class='sign-record'>
+      <view class='list' wx:for="{{userBillList}}" wx:key>
+          <view class='item'>
+            <view class='data'>{{item.time}}</view>
+            <view class='listn'>
+                <view class='itemn acea-row row-between-wrapper' wx:for="{{item.list}}" wx:for-item="vo" wx:key bindtap="taskinfo" data-item="{{vo}}">
+                  <view>
+                      <view class='name line1'>{{vo.title}}</view>
+                      <view>{{item.taskid}}{{vo.desc}}</view>
+                  </view>
+                  <view class='num' wx:if="{{vo.pm}}">+{{vo.number}}</view>
+                  <view class='num font-color' wx:else>-{{vo.number}}</view>
+                </view>
+            </view>
+          </view>
+      </view>
+      <view class='loadingicon acea-row row-center-wrapper'>
+        <text class='loading iconfont icon-jiazai' hidden='{{loading==false}}'></text>{{loadTitle}}
+     </view>
+    </view>
+</view>
+

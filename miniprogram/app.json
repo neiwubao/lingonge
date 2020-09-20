@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/index1",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/userselect/userselect",
+    "pages/userselect/geren/geren",
+    "pages/other/error",
+    "pages/userselect/enter/enter",
+    "pages/userselect/duiman/duiman",
+    "pages/user/cash/cash",
+    "pages/userselect/duiman/list",
+    "pages/user/sign/sign",
+    "pages/user/msglog/msglog",
+    "pages/user_sgin_list/index",
+    "pages/paihang/paihang",
+    "pages/task/task",
+    "pages/reg/reg",
+    "pages/my/my",
+    "pages/person/person",
+    "pages/task_info/task_info",
+    "pages/userselect/duiyuan/duiyuan",
+    "pages/task/list",
+    "pages/user/quest/index",
+    "pages/about/index",
+    "pages/user/cash/list",
+    "pages/user/team/list",
+    "pages/about/guize",
+    "pages/task/moban",
+    "pages/userselect/enter/renzhen",
+    "pages/blacklist/index",
+    "pages/redlist/index",
+    "pages/task_info/team_bill",
+    "pages/task_info/commit"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "零工哥",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置，方便按区域分配任务"
+    }
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#282828",
+    "selectedColor": "#e93323",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/3.png",
+        "selectedIconPath": "images/2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/task/task",
+        "iconPath": "images/6.png",
+        "selectedIconPath": "images/5.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/4.png",
+        "selectedIconPath": "images/1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,36 @@
+<cu-custom bgColor="bg-gradual-purple" isCustom="{{true}}">
+  <view slot="content">任务评价</view>
+</cu-custom>
+<form>
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			<text class="cuIcon-titles text-green"></text>
+			<text class="text-df text-bold">评价结果</text>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">好评</view>
+		<switch class="orange radius sm" bindchange="haop" checked="{{haop}}"></switch>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">中评</view>
+		<switch class="orange radius sm" bindchange="zhongp" checked="{{zhongp}}"></switch>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">差评</view>
+		<switch class="orange radius sm" bindchange="chap" checked="{{chap}}"></switch>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">拉入我的黑名单</view>
+		<switch class="orange radius sm" bindchange="black" checked="{{black}}"></switch>
+	</view>
+    <view class="cu-form-group" wx:if="{{index>1}}">
+		<textarea maxlength="255" value="{{msg}}" bindinput="changmsg" placeholder="请输入文字说明"></textarea>
+	</view>
+    <view class="btn_bottom margin-top">
+		<view class="cu-bar btn-group">
+		<button class="cu-btn bg-blue shadow-blur round lg" bindtap="submit">提交</button>
+		</view>
+    </view>
+</form>
+

@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-gradual-purple" isCustom="{{true}}">
+  <view slot="content">意见反馈</view>
+</cu-custom>
+<form>
+  <view class="cu-form-group margin-top">
+		<view class="title">问题类型</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-bar bg-white">
+		<view class="action">
+			图片说明
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  <view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入反馈内容"></textarea>
+	</view>
+  <view class="btn_bottom margin-top">
+    <view class="cu-bar btn-group">
+      <button class="cu-btn bg-blue shadow-blur round lg">提交</button>
+    </view>
+  </view>
+</form>
+

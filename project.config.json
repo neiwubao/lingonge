@@ -1,0 +1,180 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "appid": "wx9da216e9e452e72c",
+  "projectname": "testdato",
+  "libVersion": "2.8.1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "compileType": "miniprogram",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": 0,
+          "name": "pages/userselect/duiman/duiman",
+          "pathName": "pages/userselect/duiman/duiman",
+          "query": "openid=oqOea5VpgfRALcDGxaP4M_HIbE2Y",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/userselect/duiman/list",
+          "pathName": "pages/userselect/duiman/list",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/task/task",
+          "pathName": "pages/task/task",
+          "query": "id=1584188512308_13_72736",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/task_info/task_info",
+          "pathName": "pages/task_info/task_info",
+          "query": "id=9a393e025e770b05001797e8288aad1c",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/user/cash/list",
+          "pathName": "pages/user/cash/list",
+          "query": "id=1584192801241_0.536185591602558_16791359-1584192801867_17_82488",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/user/msglog/msglog",
+          "pathName": "pages/user/msglog/msglog",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/task/list",
+          "pathName": "pages/task/list",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/user/cash/cash",
+          "pathName": "pages/user/cash/cash",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/userselect/userselect",
+          "pathName": "pages/userselect/userselect",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index1",
+          "pathName": "pages/index/index1",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/user/msglog/msglog",
+          "pathName": "pages/user/msglog/msglog",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/task/list",
+          "pathName": "pages/task/list",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "ac=3",
+          "scene": null
+        },
+        {
+          "id": 13,
+          "name": "pages/task_info/task_info",
+          "pathName": "pages/task_info/task_info",
+          "query": "id=fddd30c55eae6e1d004a515a11c1b396",
+          "scene": null
+        },
+        {
+          "id": 14,
+          "name": "pages/task_info/commit",
+          "pathName": "pages/task_info/commit",
+          "query": "taskid=fddd30c55eae7572004a98ee7b526461&openid=oqOea5QJZ_8NbcyMMJ7PKphxGe4w",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/blacklist/index",
+          "pathName": "pages/blacklist/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

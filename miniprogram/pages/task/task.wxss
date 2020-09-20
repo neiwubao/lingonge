@@ -1,0 +1,13 @@
+.rightinput{
+  text-align:right;font-size:13px;
+}
+.timegroup picker{
+  width: 60px;
+  flex:none;
+}
+.renwuleixing{
+  padding-top: 10rpx;padding-bottom: 20rpx;
+ }
+.renwuleixing .cu-tag{
+  margin-bottom: 5px;
+}

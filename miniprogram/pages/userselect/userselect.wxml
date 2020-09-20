@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-gradual-pink">
+  <view slot="content">零工哥</view>
+</cu-custom>
+<view class="us_bg">
+  <view class="us_title">选择自己的身份</view>
+  <view class="card">
+      <view class="cardbox" >
+        <image class="cardimg" src="../../image/us_one.png"></image>
+        <view class="cu-btns">
+        <button class="cu-btn round bg-red " open-type="getUserInfo" data-id="1" bindtap="userselect">我要打零工</button>
+        <button class="cu-btn cu-btn-right round bg-orange " open-type="getUserInfo" data-id="2" bindtap="userselect">我要带团队</button>
+        </view>
+      </view>
+      <view class="cardbox">
+        <image class="cardimg" src="../../image/us_two.png"></image>
+        <button class="cu-btn round bg-orange " open-type="getUserInfo" data-id="3" bindtap="userselect">我要找工人</button>
+      </view>
+  </view>
+</view>

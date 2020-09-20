@@ -1,0 +1,28 @@
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+  <cu-custom bgColor="bg-gradual-purple" isCustom="{{true}}">
+    <view slot="content">我的队员</view>
+  </cu-custom>
+  <view class="cu-list menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{4}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100{{index+1}}.jpg);"></view>
+      <view class="content">
+        <view class="text-grey">文晓港</view>
+        <view class="text-gray text-sm">
+          <text class="cuIcon-infofill text-red"></text> 老司机</view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">水泥工</view>
+        <view class="cu-tag round bg-grey sm">5</view>
+      </view>
+      <view class="move">
+        <view class="bg-grey">编辑</view>
+        <view class="bg-red">删除</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn_bottom">
+    <view class="cu-bar btn-group">
+      <button class="cu-btn bg-blue shadow-blur round lg">添加</button>
+    </view>
+  </view>
+</scroll-view>

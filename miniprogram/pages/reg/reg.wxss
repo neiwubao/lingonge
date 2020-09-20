@@ -1,0 +1,120 @@
+.top {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.top>.back {
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid #333333;
+  border-top: 1px solid #333333;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+.top>.title {
+  text-align: center;
+  font-size: 16px;
+}
+
+.box {
+  width: 95%;
+  margin: 0 10px;
+  box-shadow:0px 0px 18px 2px rgba(46,71,226,0.15);
+  border-radius:8px;
+  overflow: hidden
+}
+.tip,.item {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #E6E6E6;
+  display: flex;
+  color: #666666;
+  font-size: 14px;
+  padding-left: 15px;
+}
+.item {
+  padding-right: 45px;
+  justify-content: space-between;
+}
+.item>label {
+  font-weight: 500;
+}
+.item>.circle {
+  width: 40px;
+  height: 40px;
+  margin: 5px 0;
+  background-color: #5587EA;
+  opacity: 0.45;
+  border-radius: 50%; 
+}
+.item>input {
+  height: 50px;
+  width: 200px;
+  text-align: right;
+  padding: 0;
+}
+
+.tip>view:last-child {
+  font-weight: 500;
+}
+.tip>image {
+  width: 20px;
+  height: 20px;
+  margin: 15px 0;
+  margin-right: 5px;
+}
+.tip>view:first-child {
+  margin-right: 8px;
+}
+.la {
+  position: relative;
+}
+.la>.xia {
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 17px;
+  right: -27px;
+}
+.get {
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #313131;
+  border-radius:10px;
+  margin: 10px 0;
+  font-size: 12px;
+  color: #313131;
+  padding: 0 5px;
+}
+.item>.r {
+  /* display: flex; */
+  height: 50px;
+  line-height: 50px;
+  display: flex
+}
+.r>input {
+  height: 50px;
+  text-align: right;
+  margin-right: 5px;
+  padding: 0;
+  color: #313131;
+}
+button {
+  width: 70%;
+  margin: 40px auto;
+  background-color: #5587EA;
+  opacity: 0.5
+}
+
+.placeholder {
+  font-size: 12px;
+}
+
+

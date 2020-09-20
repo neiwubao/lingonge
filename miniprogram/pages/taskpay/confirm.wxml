@@ -1,0 +1,89 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}" bindtap="pageBack">
+	<view slot="backText">返回</view>
+	<view slot="content">支付费用</view>
+</cu-custom>
+<view class="pay-kong-20-box"></view>
+<view class='pay-kong-box'>
+	<view class="address-left">
+		<!-- <view class="address-icon-box cuIcon-locationfill"></view> -->
+	</view>
+	<view class="address-right">
+		<view class="time-box">2020-03-03 09:00:00 到 2020-03-05 09:00:00
+		</view>
+		<view class="address-box">广东省-深圳市-龙岗区-1000号</view>
+	</view>
+
+
+</view>
+<!-- <view class="pay-kong-20-box"></view>
+
+<view class="images-title"><text class="cuIcon-titles text-orange"></text> 相关图片</view>
+
+<view class="images-box">
+	<view class="images-item"></view>
+</view> -->
+<view class="pay-kong-20-box"></view>
+<view class="images-title"><text class="cuIcon-titles text-orange"></text> 详细信息</view>
+<view class="cu-list menu sm-border">
+
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">需要人数</text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">10人</text>
+		</view>
+	</view>
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">工人工钱 <text class="text-sm ">( 每天的工钱 * 天数)</text></text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">100元/人</text>
+		</view>
+	</view>
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">任务时长</text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">2天</text>
+		</view>
+	</view>
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">队长带班费 <text class="text-sm ">( 每天的带班费 * 天数)</text></text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">100元</text>
+		</view>
+	</view>
+	<!-- <view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">总金额 <text class="text-sm ">( 工人工钱+队长带班费)</text></text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">100元</text>
+		</view>
+	</view> -->
+	<view class="border-bott"></view>
+</view>
+<!-- <view class="describe-box">
+
+	<view class="text-grey ">具体描述</view>
+	<view class="describe-content text-grey">sdasdaadsadasdasdsa</view>
+</view> -->
+
+<view class="foot-botten">
+
+	<view class="foot-left-box">
+
+		<view> 总金额 ： 100元</view>
+		<view class="text-sm ">( 工人工钱+队长带班费)</view>
+	</view>
+
+	<view class="foot-right-box">
+		<button class="cu-btn round bg-blue shadow " style="width:240rpx">
+			确认</button>
+	</view>
+</view>

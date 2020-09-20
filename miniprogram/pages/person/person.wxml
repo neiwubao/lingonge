@@ -1,0 +1,63 @@
+<view class='top'>
+  <image src='../../images/gr_tou.png' mode='aspectFill'></image>
+  <view class='back'></view>
+  <image src='../../images/touxiang.png' mode='aspectFill' class='two'></image>
+  <view class='work'>工作狂</view>
+  <view class='content'>想做一直成熟的格子</view> 
+</view>
+<view class='tab'>
+  <view class='tab_item'>
+    <image src='../../images/xing.png'></image>
+    <view>已发布任务</view>
+    <text>26</text>
+  </view>
+  <view class='tab_item'>
+    <image src='../../images/gr_fensi.png'></image>
+    <view>粉丝</view>
+    <text>36</text>
+  </view>
+</view>
+<view class='task'>
+  <view class='task_item'>
+    <image src='../../images/gr_jindu.png'></image>
+    <view class='right'>
+      <text>任务进度</text>
+      <view class='qian'></view>
+    </view>
+  </view>
+  <view class='task_item'>
+    <image src='../../images/gr_rmd.png'></image>
+    <view class='right'>
+      <text>红名单排行</text>
+      <view class='qian'></view>
+    </view>
+  </view>
+  <view class='task_item'>
+    <image src='../../images/gr_hmd.png'></image>
+    <view class='right'>
+      <text>绿名单名录</text>
+      <view class='qian'></view>
+    </view>
+  </view>
+  <view class='task_item'>
+    <image src='../../images/gr_wm.png'></image>
+    <view class='right'>
+      <text>关于我们</text>
+      <view class='qian'></view>
+    </view>
+  </view>
+  <view class='task_item'>
+    <image src='../../images/gr_tousu.png'></image>
+    <view class='right'>
+      <text>投诉建议</text>
+      <view class='qian'></view>
+    </view>
+  </view>
+  <view class='task_item'>
+    <image src='../../images/gr_setting.png'></image>
+    <view class='right'>
+      <text>切换身份</text>
+      <view class='qian'></view>
+    </view>
+  </view>
+</view>

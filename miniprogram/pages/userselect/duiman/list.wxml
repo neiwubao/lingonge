@@ -1,0 +1,71 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content" wx:if="{{ac==2}}">我的队员</view>
+  <view slot="content" wx:if="{{ac==3}}">我的工人</view>
+</cu-custom>
+<view class="promoter-list">
+    <view class='promoterHeader bg-color'>
+        <view class='headerCon acea-row row-between-wrapper'>
+            <view>
+                <view class='name'>团队人数</view>
+                <view><text class='num'>{{teamCount}}</text>人</view>
+            </view>
+            <view style="float:right;">
+            <view class='iconfont icon-tuandui' style="float:left;display:none"></view>
+            <button open-type="share" class="cu-btn bg-purple shadow-blur round " style="width: 100px;float:right;">邀请</button>
+            </view>
+        </view>
+    </view>
+    <view class='search acea-row row-between-wrapper'>
+        <view class='input'><input placeholder='点击搜索队员姓名' placeholder-class='placeholder' value='{{keyword}}' bindblur='setKeyword'></input><text class='iconfont icon-guanbi'></text></view>
+        <view class='iconfont icon-sousuo2' bindtap='setRecordList'></view>
+    </view>
+    <view class='list'>
+        <view class="sortNav acea-row row-middle">
+            <view class="sortItem" data-sort="childCount ASC" bindtap='setSort' wx:if="{{sort == 'childCount DESC'}}">综合排序
+              <image src='/images/sort1.png'></image>
+            </view>
+            <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'childCount ASC'}}">综合排序
+              <image src='/images/sort3.png'></image>
+            </view>
+            <view class="sortItem" data-sort="childCount DESC" bindtap='setSort' wx:else>综合排序
+              <image src='/images/sort2.png'></image>
+            </view>
+            <view class="sortItem" data-sort="numberCount ASC" bindtap='setSort' wx:if="{{sort == 'numberCount DESC'}}">工龄排序
+              <image src='/images/sort1.png'></image>
+            </view>
+            <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'numberCount ASC'}}">工龄排序
+              <image src='/images/sort3.png'></image>
+            </view>
+            <view class="sortItem" data-sort="numberCount DESC" bindtap='setSort' wx:else>工龄排序
+              <image src='/images/sort2.png'></image>
+            </view>
+            <view class="sortItem" data-sort="orderCount ASC" bindtap='setSort' wx:if="{{sort == 'orderCount DESC'}}">接单排序
+              <image src='/images/sort1.png'></image>
+            </view>
+            <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'orderCount ASC'}}">接单排序
+              <image src='/images/sort3.png'></image>
+            </view>
+            <view class="sortItem" data-sort="orderCount DESC" bindtap='setSort' wx:else>接单排序
+              <image src='/images/sort2.png'></image>
+            </view>
+        </view>
+        <block wx:for="{{recordList}}" wx:key>
+          <view class='item acea-row row-between-wrapper' bindtap="backtask" data-member="{{item.member_id}}">
+              <view class="picTxt acea-row row-between-wrapper">
+                  <view class='pictrue'><image src='{{item.avatar}}'></image></view>
+                  <view class='text'>
+                      <view class='name line1'>{{item.nickname}}</view>
+                      <view>加入时间: {{item.time}}</view>
+                  </view>
+              </view>
+              <view class="right">
+                  <view>{{item.realname}}</view>
+                  <view>任务 <text class='font-color'>{{item.task ? item.task : 0}}</text> 单</view>
+                  <view>工龄 {{item.year ? item.year : 0}} 年</view>
+              </view>
+          </view>
+        </block>
+    </view>
+</view>
+

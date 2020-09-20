@@ -1,0 +1,327 @@
+<cu-custom bgColor="bg-gradual-purple" isCustom="{{true}}">
+  <view slot="content">任务详情</view>
+</cu-custom>
+
+<view class="cu-modal {{ac1no?'show':''}}"> 
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">请选择操作</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      雇主指定队长才有接单权限
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green " bindtap="forcejiedan">
+        向队长报名</view>
+      <view class="action margin-0 flex-sub text-red solid-left" bindtap="gosendteam">
+      申请晋级队长</view>
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">知道了</view>
+    </view>
+  </view>
+</view>
+<view style="height:10px"></view>
+<block wx:if="{{info.pics.length==0}}">
+  <view class='pic'>
+    <image src='cloud://lingqiange-yun.6c69-lingqiange-yun-1300812031/car.png'></image>
+  </view>
+</block>
+<block>
+  <view class='box' style="padding:0px;">
+    <view class='pics'>
+      <image class="picli" wx:for="{{info.pics}}" src="cloud://lingqiange-yun.6c69-lingqiange-yun-1300812031/{{item}}"></image>
+    </view>
+  </view>
+</block>
+<view style="height:10px"></view>
+<view class='box'>
+  <view class='box_top'>
+    <view class='box_top_l'>
+      <text>{{info.money}}元/人</text>
+      <text wx:if="{{info.captain}}">(队长另有{{info.captain}}元/人带班费)</text>
+      </view>
+  </view>
+  <view class='box_bot'>
+    <view class='box_bot_item'>
+      <view>时间</view>
+      <view>{{info.date1}}-{{info.date2}} {{info.startime}}-{{info.endtime}}</view>
+    </view>
+    <view class='box_bot_item'>
+      <view>地址</view>
+      <view>{{info.address}}</view>
+    </view>
+  </view>
+</view>
+<view class='bot'>
+  <view class='tu'>
+    <view class='tu_item blue'></view>
+    <view class='tu_item red'></view>
+    <view class='tu_item blue'></view>
+    <view class='tu_item red'></view>
+    <view class='tu_item blue'></view>
+    <view class='tu_item red'></view>
+    <view class='tu_item blue'></view>
+    <view class='tu_item red'></view>
+    <view class='tu_item blue'></view>
+  </view>
+</view>
+<view style="height:10px"></view>
+<view class='task'>
+  <view class='task_top'>任务详细信息</view>
+  <view class='task_bot'>
+    <view class='task_bot_item'>
+      <view>任务描述</view>
+      <view>{{info.content}}</view>
+    </view>
+    <view class='task_bot_item'>
+      <view>需要人数</view>
+      <view>{{info.need}}人</view>
+    </view>
+    <view class='task_bot_item'>
+      <view>付款方式</view>
+      <view>{{info.paytype==1?'现场结算':'在线结算'}}</view>
+    </view>
+    <view class='task_bot_item'>
+      <view>任务权限</view>
+      <view>{{info.taskmodel==1?'个人权限':'队长权限'}}</view>
+    </view>
+    <view class='task_bot_item'>
+      <view>工作天数</view>
+      <view>{{info.day}}天</view>
+    </view>
+    <view class='task_bot_item'>
+      <view>每人工钱</view>
+      <view>{{info.money}}元</view>
+    </view>
+    <view class='task_bot_item' wx:if="{{info.captain_fee>0}}">
+      <view>带班费</view>
+      <view>{{info.captain_fee}}元/每人/每天</view>
+    </view>
+  </view>
+</view>
+<view class='kong'></view>
+<view class='company'>
+  <view class='company_info'>发布方</view>
+  <view class='company_bot'>
+    <view class='l'><image class="image" src="{{info.poster.avatar}}"></image></view>
+    <view class='c'>
+      <view>雇主：</view>
+      <view>联络人：</view>
+    </view>
+    <view class='t'>
+      <view>{{info.poster.name}}</view>
+      <view>{{info.poster.realname}}</view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{info.team}}">
+<view class='kong'></view>
+<view class='company'>
+  <view class='company_info'>团队</view>
+  <view class='company_bot'>
+    <view class='l'><image class="image" src="{{info.team.avatar}}"></image></view>
+    <view class='c'>
+      <view>名称：</view>
+      <view>联络人：</view>
+    </view>
+    <view class='t'>
+      <view>{{info.team.realname}}</view>
+      <view>{{info.team.phone}}</view>
+    </view>
+    <view class='r' wx:if="{{info.task_id==order.openid || ac==2}}">
+      <block wx:if="{{info.openid==openid}}">
+        <view class="cu-btn bg-red shadow-blur round sm" wx:if="{{info.team_money==1}}"
+          bindtap="moneyToTeam">放款</view>
+          <view class="cu-btn bg-red shadow-blur round sm" wx:elif="{{info.team_money==2}}"
+          bindtap="teamBill">已发放</view>
+      </block>
+      <block wx:else>
+        <block wx:if="{{info.status==2 && info.ispay==1}}">
+          <view class="cu-btn bg-red shadow-blur round sm" wx:if="{{info.team_money==1}}"
+            >已申请</view>
+          <view class="cu-btn bg-red shadow-blur round sm" bindtap="teamBill" wx:if="{{info.team_money==-1}}"
+            >已拒绝</view>
+          <view class="cu-btn bg-red shadow-blur round sm" bindtap="teamBill" wx:elif="{{info.team_money==2}}"
+            >已到账</view>
+          <view class="cu-btn bg-red shadow-blur round sm" wx:else bindtap="teamBill"
+            >结算</view>
+        </block>
+      </block>
+    </view>
+  </view>
+</view>
+</block>
+<block wx:if="{{dealmember}}">
+  <view class='kong'></view>
+  <view class='company'>
+    <view class='company_info' wx:if="{{ac==2}}">
+      {{info.status>1?'工人列表':'任务候选人'}}
+      <text style="display:none;">({{info.order_num?info.order_num+1:'1'}}/{{info.need}})</text>
+    </view>
+    <view class='company_info' wx:if="{{ac==3}}">{{info.status>1?'工人列表':'任务候选人'}}</view>
+    <block wx:if="{{records_count>0}}">
+      <view class='company_bot' wx:for="{{records}}">
+        <view class='l' bindtap="viewuser" data-openid="{{item.openid}}">
+          <image class="image" src="{{item.avatar}}"></image>
+        </view>
+        <view class='c' bindtap="viewuser" data-openid="{{item.openid}}">
+          <view>接单者：</view>
+          <view>下单时间：</view>
+        </view>
+        <view class='t' bindtap="viewuser" data-openid="{{item.openid}}">
+          <view>{{item.nickname}}</view>
+          <view>{{item.year}}-{{item.mon}}-{{item.da}}</view>
+        </view>
+
+        <view class='r' wx:if="{{info.status==0 || ac==3}}">
+          <view class="cu-btn bg-red shadow-blur round sm"
+            data-id="{{item._id}}" data-openid="{{item.openid}}" bindtap="shenhe"
+            wx:if="{{item.status==0}}">选择</view>
+          <view class="cu-btn bg-grey shadow-blur round sm" wx:elif="{{item.status==-1}}">已取消</view>
+          <view class="cu-btn bg-grey shadow-blur round sm" wx:elif="{{item.status==-2}}">落选</view>
+          <view class="cu-btn bg-red shadow-blur round sm" 
+            data-id="{{item._id}}" data-openid="{{item.openid}}" bindtap="ckong" 
+            wx:elif="{{info.status==3}}">
+            <view wx:if="{{item.ismoney==1 && item.commit==1}}" data-item="{{item}}" bindtap="viewcommit">已评价</view>
+            <view wx:elif="{{item.ismoney==1}}" data-openid="{{item.openid}}" bindtap="commit">待评价</view>
+          </view>
+          <view class="cu-btn bg-red shadow-blur round sm" 
+            data-id="{{item._id}}" data-openid="{{item.openid}}" bindtap="ckong" 
+            wx:elif="{{item.status==1}}">
+            <block wx:if="{{info.taskmodel==1}}">
+              <block wx:if="{{item.ismoney==1}}">已结账</block>
+              <block wx:elif="{{info.status==2}}">结算</block>
+              <block wx:else>已选中</block>
+            </block>
+            <block wx:if="{{info.taskmodel==2}}">已中标</block>
+            <block wx:if="{{info.taskmodel==-1}}">已取消</block>
+          </view>
+          
+        </view>
+
+        <view class='r' wx:elif="{{info.status==1}}">
+          <view class="cu-btn bg-red shadow-blur round sm" wx:if="{{item.status==1}}">已选择</view>
+          <view class="cu-btn bg-red shadow-blur round sm" wx:elif="{{item.status==-1}}">已拒绝</view>
+          <view class="cu-btn bg-red shadow-blur round sm" wx:else 
+                data-id="{{item._id}}" data-openid="{{item.openid}}" bindtap="shenhe">候选</view>
+        </view>
+
+        <view class='r' wx:elif="{{info.status==2}}">
+          <view class="cu-btn bg-blue shadow-blur round sm" 
+            data-id="{{item._id}}" data-openid="{{item.openid}}" bindtap="signOrder">点名</view>
+        </view>
+
+        <view class='r' wx:elif="{{info.status==3}}">
+          <view class="cu-btn bg-blue shadow-blur round sm" wx:if="{{item.ismoney==1 && item.commit==1}}" data-item="{{item}}" bindtap="viewcommit">已评价</view>
+          <view class="cu-btn bg-blue shadow-blur round sm" wx:elif="{{item.ismoney==1}}" data-openid="{{item.openid}}" bindtap="commit">待评价</view>
+          <view class="cu-btn bg-blue shadow-blur round sm" wx:else
+                bindtap="sendUserMoney" data-openid="{{item.openid}}">结算</view>
+        </view>
+
+        <view class='r' wx:else></view>
+
+      </view>
+    </block>
+    <block wx:else>
+      <view class="nobody">{{userlistmessage}}</view>
+    </block>
+  </view>
+</block>
+
+<view class='kong'></view>
+
+<view class="btn_bottom margin-top" wx:if="{{order && ac ==2 }}">
+
+  <view class="cu-bar btn-group" wx:if="{{order.openid == info.team_id && info.team_id && info.status<2}}">
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="open" wx:if="{{info.ispay==1}}">开工</button>
+    <button class="cu-btn bg-red shadow-blur round lg" bindtap="open" wx:elif="{{info.ispay==0 && info.paytype==1}}">开工</button>
+    <button class="cu-btn bg-red shadow-blur round lg" wx:else>等待雇主付款</button>
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="adduser">添加成员</button>
+  </view>
+  <view class="cu-bar btn-group" wx:if="{{order.openid == info.team_id && info.team_id && info.status==2}}">
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="adduser">追加成员</button>
+  </view>
+  <view class="cu-bar btn-group" wx:else>
+    <block wx:if="{{info.status == 1}}">
+      <block wx:if="{{order.ac == 2}}">
+        <block wx:if="{{order.openid != info.team_id}}">
+          <button class="cu-btn bg-blue shadow-blur round lg" bindtap="jiedan" data-type="1">以个人身份接单</button>
+        </block>
+      </block>
+      <block wx:else>
+        <button class="cu-btn bg-grey shadow-blur round lg" wx:if="{{order.status==0}}">已接单,待审核</button>
+        <button class="cu-btn bg-oranige shadow-blur round lg" wx:if="{{order.status==0}}">撤销接单</button>
+        <button class="cu-btn bg-oranige shadow-blur round lg" wx:if="{{order.status==1}}">已接单</button>
+      </block>
+    </block>
+    <block wx:elif="{{info.status == 0}}">
+      <button class="cu-btn bg-grey shadow-blur round lg" wx:if="{{order.status==0}}">已接单,待审核</button>
+      <button class="cu-btn bg-red shadow-blur round lg" wx:if="{{order.status==0}}" data-ac="2" bindtap="cexiao">撤销接单</button>
+      <button class="cu-btn bg-oranige shadow-blur round lg" wx:if="{{order.status==1}}">已接单</button>
+      <button class="cu-btn bg-grey shadow-blur round lg" wx:if="{{order.status==-1}}">您已取消该订单</button>
+    </block>
+  </view>
+</view>
+
+<view class="btn_bottom margin-top" wx:elif="{{order && ac == 1}}">
+  <view class="cu-bar btn-group">
+    <button class="cu-btn bg-grey shadow-blur round lg" wx:if="{{order.status==-1}}">您已取消接该订单</button>
+    <button class="cu-btn bg-grey shadow-blur round lg" wx:if="{{order.status==0}}">已接单,待审核</button>
+    <button class="cu-btn bg-red shadow-blur round lg" wx:if="{{order.status==0}}" bindtap="cancelOrder">取消订单</button>
+    <button class="cu-btn bg-oranige shadow-blur round lg" wx:if="{{order.status==1}}">已接单</button>
+  </view>
+</view>
+
+<view class="btn_bottom margin-top" wx:else>
+  <view class="cu-bar btn-group" wx:if="{{is_jiedan==1 && ac < 3}}">
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="jiedan" data-type="{{ac}}" wx:if="{{openid}}">{{jiedanmsg}}</button>
+    <button class="cu-btn bg-blue shadow-blur round lg" open-type="getUserInfo" wx:else>微信授权并接单</button>
+  </view>
+  <view class="cu-bar btn-group" wx:elif="{{is_jiedan==2 && ac == 1}}">
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="jiedan" data-type="{{ac}}" wx:if="{{openid}}">{{jiedanmsg}}</button>
+    <button class="cu-btn bg-blue shadow-blur round lg" open-type="getUserInfo" wx:else>微信授权并接单</button>
+  </view>
+  <view class="cu-bar btn-group" wx:elif="{{is_jiedan==2 && ac == 2}}">
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="jiedan" data-type="1" wx:if="{{openid && info.team_id != openid}}">={{jiedanmsg}}</button>
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="jiedan" data-type="{{ac}}" wx:elif="{{openid}}">{{jiedanmsg}}</button>
+    <button class="cu-btn bg-blue shadow-blur round lg" open-type="getUserInfo" wx:else>微信授权并接单</button>
+  </view>
+</view>
+
+<view class="btn_bottom margin-top" wx:if="{{info.status == 1 && info.taskmodel == 1 && ac == 3}}">
+  <view class="cu-bar btn-group">
+    <block wx:if="{{info.ispay==1 || info.paytype==1}}">
+      <button class="cu-btn bg-blue shadow-blur round lg" bindtap="open">开工</button>
+    </block>
+    <block wx:else>
+    <button class="cu-btn bg-blue shadow-blur round lg" bindtap="wxpay">付款</button>
+    </block>
+  </view>
+</view>
+
+<view class="btn_bottom margin-top" wx:if="{{ ac ==3 }}">
+  <view class="cu-bar btn-group">
+    <block wx:if="{{info.status == 0}}">
+      <button class="cu-btn bg-olive shadow-grange round lg" bindtap="editask" wx:if="{{openid==info.openid && isChoose==0}}">编辑</button>
+       <button class="cu-btn bg-red shadow-grange round lg" bindtap="taskRevoke" wx:if="{{openid==info.openid && isChoose==0}}">撤销</button>
+    </block>
+    <block wx:if="{{info.status == 1 && info.taskmodel == 2}}">
+      <block wx:if="{{info.ispay==1}}">
+        <button class="cu-btn bg-grey shadow-grange round lg">已付款</button>
+      </block>
+      <block wx:elif="{{info.ispay==0 && info.paytype==0}}">
+        <button class="cu-btn bg-red shadow-blur round lg" bindtap="wxpay">
+        立即支付</button>
+      </block>
+      <block wx:elif="{{info.ispay==0 && info.paytype==1}}"></block>
+      <block wx:elif="{{info.ispay==1}}"></block>
+    </block>
+  </view>
+</view>
+
+<view class='kong'></view>
+
+
+

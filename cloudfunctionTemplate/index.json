@@ -1,0 +1,27 @@
+[
+    {
+        "name": "获取列表",
+        "value": {
+            "url": "getTaskNew"
+        }
+    },
+    {
+        "name": "查询单条",
+        "value": {
+            "$url": "getTaskDetail",
+            "data": "e8f863ba5de7abb3005a24e7408fe956"
+        }
+    },
+    {
+        "name": "添加任务",
+        "value": {
+            "key": "value"
+        }
+    },
+    {
+        "name": "查询分类",
+        "value": {
+            "$url": "task_type"
+        }
+    }
+]

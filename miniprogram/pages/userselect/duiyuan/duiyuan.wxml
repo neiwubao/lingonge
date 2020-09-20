@@ -1,0 +1,58 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}">
+  <view slot="content">工人资料</view>
+</cu-custom>
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <text class="cuIcon-titles text-green"></text>
+      <text class="text-xl text-bold">我的信息</text>
+    </view>
+  </view>
+	<view class="cu-form-group">
+		<view class="title">姓名</view>
+		<input placeholder="请输入姓名" name="realname" confirm-type="go" value="{{info.realname}}" wx:if="{{view==0}}"></input>
+		<text wx:else>{{info.realname}}</text>
+	</view>
+  <view class="cu-form-group" wx:if="{{view==0}}">
+		<view class="title">身份证号</view>
+		<input placeholder="请输入身份证号" name="idcard" type="idcard" value="{{info.idcard}}"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input placeholder="输入手机号码" name="phone" type="number" value="{{info.phone}}" wx:if="{{view==0}}"></input>
+		<text wx:else bindtap="tel">{{info.phone}}</text>
+		<view class="cu-capsule radius" wx:if="{{view==0}}">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">籍贯</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}" wx:if="{{view==0}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+		<text wx:else>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">从业经验年限</view>
+		<input placeholder="请输入从业经验年限" name="nian" type="number" value="{{info.nian}}" wx:if="{{view==0}}"></input>
+		<text wx:else>{{info.nian}}</text>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">擅长领域</view>
+		<input placeholder="请输入擅长领域" name="yewu" value="{{info.yewu}}" wx:if="{{view==0}}"></input>
+		<text wx:else>{{info.yewu}}</text>
+	</view>
+  <view class="btn_bottom margin-top" wx:if="{{view==0}}">
+    <view class="cu-bar btn-group">
+      <button class="cu-btn bg-blue shadow-blur round lg" formType="submit">提交</button>
+    </view>
+  </view>
+</form>
+

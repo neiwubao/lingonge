@@ -1,0 +1,115 @@
+/* miniprogram/pages/pay/confirm.wxss */
+.pay-kong-20-box {
+    height: 20rpx;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .pay-kong-box {
+    height: 150rpx;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    background: #fff;
+  }
+  
+  .address-left {
+    width: 15%;
+  }
+  
+  .address-icon-box {
+    height: 60rpx;
+    width: 60rpx;
+    margin: 0 auto;
+    padding: 40rpx 0;
+    font-size: 40rpx;
+  }
+  
+  .address-right {
+    width: 85%;
+  }
+  
+  .time-box {
+    height: 80rpx;
+    font-size: 24rpx;
+    line-height: 80rpx;
+  }
+  
+  address-box {
+    height: 40rpx;
+    font-size: 22rpx;
+    line-height: 40rpx;
+  }
+  
+  .images-box {
+    height: 280rpx;
+    width: 100%;
+    display: flex;
+    background: #fff;
+  }
+  
+  .images-item {
+  
+    width: 240rpx;
+    height: 240rpx;
+    background: #000;
+    margin-left: 20rpx;
+    margin: 20rpx 0 20rpx 20rpx;
+    border-radius: 16rpx;
+  }
+  
+  .border-box {
+    width: 100%;
+    border-bottom: 1rpx solid #e8e8e8;
+  }
+  
+  .images-title {
+    width: 100%;
+    background: #fff;
+    padding: 15rpx 0 15rpx 25rpx;
+    border-bottom: 1rpx solid #f8f8f8;
+    line-height: 30rpx;
+  }
+  
+  .info-list {
+    padding: 30rpx;
+    background: #000;
+  }
+  
+  .border-bott {
+    border-bottom: 1rpx solid #ddd;
+  
+  }
+  
+  .describe-box {
+    padding: 20rpx 30rpx;
+    background: #fff;
+  
+  }
+  
+  .describe-content {
+    width: 90%;
+    padding: 20rpx 40rpx;
+  }
+  
+  .foot-botten {
+    height: 120rpx;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    background: #fff;
+    display: flex;
+  }
+  
+  .foot-left-box {
+    padding: 20rpx 0 20rpx 25rpx;
+    height: 80rpx;
+    width: 65%;
+  }
+  
+  .foot-right-box {
+    padding: 20rpx 0 20rpx 25rpx;
+    height: 80rpx;
+    width: 100%;
+  }

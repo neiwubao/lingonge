@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-purple">
+  <view slot="content">任务模板</view>
+</cu-custom>
+
+<view class="cu-bar bg-white solid-bottomp">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 模板列表
+  </view>
+</view>
+<view class="cu-list menu-nomal">
+  <view class="cu-item" wx:for="{{lists}}">
+    <view class="content flex-sub-nomal" bindtap="backtask" data-id="{{item.content}}">
+      <view class="text-grey">{{item.title}}</view>
+      <view class="text-gray text-sm flex">
+        <text class="text-cut-height">
+            <text class="cuIcon-infofill text-red  margin-right-xs"></text> {{item.content}}
+        </text>
+      </view>
+    </view>
+  </view>
+</view>
+  

@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <block slot="backText">返回</block>
+  <view slot="content">实名认证</view>
+</cu-custom>
+<view>
+  <!-- <view class="gr_top">
+    <view class="half" bindtap="doUpload_zhengmian"> 
+      <image src="{{zhengmian}}"></image>
+      <view class="gr_txt">请上传身份证正面</view>
+    </view>
+    <view class="half">
+      <image src="{{fanmian}}"></image>
+      <view class="gr_txt">请上传身份证反面</view>  
+    </view>
+  </view> -->
+  <view class="gr_btm">
+    <image src="{{shouchi}}"></image>
+    <view class="gr_txt">请上传手持身份证正面照片</view>  
+  </view>
+  <view class="btn_bottom">
+    <view class="cu-bar btn-group">
+      <button wx:if="{{btnstatus==0}}" class="cu-btn bg-blue shadow-blur round lg" bindtap="ChooseImage">上传</button>
+      <button wx:if="{{btnstatus==1}}" class="cu-btn bg-blue shadow-blur round lg">上传中</button>
+      <button wx:if="{{btnstatus==2}}" class="cu-btn bg-blue shadow-blur round lg">审核中</button>
+      <button wx:if="{{btnstatus==3}}" class="cu-btn bg-blue shadow-blur round lg">审核通过</button>
+    </view>
+  </view>
+</view>

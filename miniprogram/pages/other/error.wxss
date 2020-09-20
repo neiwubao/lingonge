@@ -1,0 +1,32 @@
+/* miniprogram/pages/other/error.wxss */
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.er_box{
+  text-align: center;
+  padding-top: 80px; 
+}
+.er_img{
+  width: 240px;
+  height: 160px;
+}
+.title{
+  font-size: 20px;
+}
+.sub_title{
+  margin-top: 5px;
+  color: #EB1B51;
+}
+.desc{
+  margin-top: 5px;
+  color: #EB1B51;
+}
+.btn_bottom{
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}

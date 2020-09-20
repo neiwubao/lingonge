@@ -1,0 +1,164 @@
+page {
+  background-color: #fff;
+  }
+  .top>image {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  z-index: -1;
+  background-size: 100% 250px; 
+}
+.la {
+  color: #fff;
+  font-size: 12px;
+  margin-left: 15px;
+  display: flex;
+  padding-top: 28px;
+  margin-right: 10px;
+  position: absolute;
+  top: 148;
+  left: 0;
+}
+.la>picker {
+  margin: 7px;
+}
+.la>.xia,.hua>.xia {
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+  margin-right: 10px;
+  margin-top: 7px;
+}
+.placeholder {
+  color: #fff;
+}
+.shuru {
+  width: 200px;
+  height: 28px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, .2);
+  line-height: 28px;
+  display: flex;
+  position: relative;
+  padding-left: 30px;
+}
+.shuru>input {
+  height: 25px;
+  line-height: 25px;
+}
+.shuru>icon {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  margin-right: 10px;
+}
+.tab {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 65px;
+  background-color: #fff;
+  border-radius: 27px;
+  position: absolute;
+  top: 210px;
+  left: 0;
+}
+.dingwei>image {
+  width: 20px;
+  height: 20px;
+}
+.tab_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab_item>image {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+.tab_item>view {
+  font-size: 12px;
+  color: #1C1C1C;
+}
+.maincontent {
+  margin-top: 0px;
+padding: 20rpx 60rpx 10rpx 60rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.hua {
+  display: flex;
+}
+.hua>picker {
+  font-size: 12px;
+  margin-right: 5px;
+}
+.hua>.xia {
+  border-left: 1px solid #1C1C1C;
+  border-bottom: 1px solid #1C1C1C;
+  margin-top: 2px;
+}
+.hou {
+  background-color: #fff;
+  padding: 10px;
+}
+.item {
+  box-shadow:0px 1px 6px 0px rgba(0, 0, 0, 0.14);
+  border-radius:10px;
+  padding: 16px 20px 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.company {
+  font-size: 16px;
+}
+.dingwei {
+  display: flex;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 15px;
+  /* margin-bottom: 10px;  */
+}
+.dingwei>.address {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #1242CF;
+}
+.l>.work_time,.l>.time,.l>.money {
+  font-size: 12px;
+  height: 22px;
+  line-height: 26px;
+}
+.l>.money>text {
+  color: #FF655B;
+}
+.r>image {
+  width: 114px;
+  height: 119px;
+}
+.item>button {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #2551FF;
+  color: #1242CF;
+  width: 78px;
+  height: 33px;
+  font-size: 12px;
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.item:last-child>button {
+  right: -46%;
+}
+.item:last-child {
+  margin-top: 10px;
+}

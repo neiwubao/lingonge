@@ -1,0 +1,126 @@
+.top {
+  width: 100%;
+  height: 205px;
+  background-color:#FDB73C;
+  padding: 30px 15px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.title {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+}
+.title>.today {
+  text-align: center;
+}
+.title>.back {
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 40px;
+  left: 25px;
+}
+.top>.my_pai {
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 15px; 
+  font-weight: 500;
+}
+.num>text {
+  font-size: 12px;
+  font-weight: 500;
+}
+.content {
+  margin-top: 20px;
+  font-size: 14px; 
+}
+.content>text {
+  color: red;
+  font-size: 20px;
+}
+.rule {
+  height: 20px;
+  width: 75px;
+  background-color: rgba(0, 0, 0, .1);
+  font-size: 14px;
+  border-radius:25px 0px 0px 25px;
+  position: absolute;
+  text-align: center;
+  right: 30px;
+  top: 90px;
+}
+.task {
+  width: 85%;
+  height: 90px;
+  background-color: #fff;
+  box-shadow:0px 0px 30px 0px rgba(255,98,98,0.08);
+  border-radius:20px;
+  position: absolute;
+  bottom: -50px;
+  left: 4%;
+  display: flex;
+}
+.task_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.task_item_t {
+  color: #292621;
+  font-weight: 500;
+  margin-top: -5px;
+}
+.task_item_t>text {
+  font-size: 12px;
+}
+.task_item_b {
+  color: #8A857C;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.main {
+  margin-top: 80px;
+  padding: 0 15px;
+}
+.main_item {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #F5F2ED;
+  font-size: 14px;
+}
+.main_item_l {
+  display: flex;
+}
+.main_item_l>image {
+   width: 40px;
+   height: 40px;
+   margin: 5px 0;
+}
+.main_item_l>image:first-child {
+  width: 20px;
+  height: 30px;
+  margin: 10px 0;
+  margin-right: 20px;
+}
+.main_item_l>view {
+  margin-left: 10px;
+}
+.main_item_l>view:first-child {
+  color: #8A857C;
+  width: 20px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 20px;
+}

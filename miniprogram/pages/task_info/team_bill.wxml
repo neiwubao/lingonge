@@ -1,0 +1,100 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}" bindtap="pageBack">
+	<view slot="backText">返回</view>
+	<view slot="content">调整结算</view>
+</cu-custom>
+<view class="pay-kong-20-box"></view>
+<view class="images-title"><text class="cuIcon-titles text-orange"></text> 任务信息</view>
+<view class="cu-list menu sm-border">
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">实际结算人数</text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">{{records.length}}人</text>
+		</view>
+	</view>
+
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">工作时长</text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">{{workday}}天</text>
+		</view>
+	</view>
+
+	<view class="cu-item marrow">
+		<view class="content">
+			<text class="text-grey">调整前应结算</text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">{{oldtotal}}元</text>
+		</view>
+	</view>
+	
+	<view class="cu-item marrow" bindtap="capiter_fee">
+		<view class="content">
+			<text class="text-grey">队长带班费</text>
+		</view>
+		<view class="action" wx:if="{{team_money==2}}">
+			<text class="text-grey text-sm" wx:if="{{captain==captain_fee}}">{{captain_fee}}元</text>
+			<text class="text-grey text-sm" wx:else>{{captain_fee}}元 [原始{{captain}}元]</text>
+		</view>
+		<view class="action" wx:else>
+			<text class="text-grey text-sm" wx:if="{{captain==captain_fee}}">{{captain_fee}}元 【修改】</text>
+			<text class="text-grey text-sm" wx:else>{{captain_fee}}元 [原始{{captain}}元] 【修改】</text>
+		</view>
+	</view>
+	<view class="border-bott"></view>
+</view>
+
+<view class="images-title"><text class="cuIcon-titles text-orange"></text> 队员信息</view>
+<view class="cu-list menu sm-border">
+	<view class="cu-form-group" wx:for-index="index" wx:for="{{records}}">
+		<view class="title">{{item.nickname}}</view>
+		<input placeholder="请输入任务的工钱" wx:if="{{ac==2}}" bindinput="changmoney" data-index="{{index}}" confirm-type="next" value="{{item.amount}}" name="money" type="digit" placeholder-class='rightinput'></input>
+		<view class="cu-capsule radius" wx:if="{{ac==2}}">
+			<view class="cu-tag bg-blue">元</view>
+		</view>
+		<view class="cu-capsule radius" wx:if="{{ac==3}}">
+			<view class="cu-tag bg-blue">{{item.amount}}</view>
+			<view class="cu-tag line-blue">
+				元
+			</view>
+		</view>
+	</view>
+	<view class="cu-item marrow" bindtap="capiter_fee">
+		<view class="content">
+			<text class="text-grey">队员给队长带班费</text>
+		</view>
+		<view class="action">
+			<text class="text-grey text-sm">10元</text>
+		</view>
+	</view>
+	<view class="border-bott"></view>
+</view>
+
+<view class="foot-botten">
+	<view class="foot-left-box">
+		<view> 总金额 ： {{total}} 元</view>
+		<view class="text-sm">(工人工钱+队长带班费)</view>
+	</view>
+	<block wx:if="{{team_money==2}}">
+		<view class="foot-right-box">
+		<button class="cu-btn round bg-blue shadow" style="float:right;margin-right:10px;width:200rpx">
+			已结算</button>
+		</view>
+	</block>
+	<block wx:else>
+	<view class="foot-right-box" wx:if="{{ac==3}}">
+		<button class="cu-btn round bg-purple shadow" bindtap="reduce_team_bill" style="float:left;width:200rpx">
+			拒绝</button>
+		<button class="cu-btn round bg-blue shadow" bindtap="save_team_bill" style="float:left;width:200rpx">
+			放款</button>
+	</view>
+	<view class="foot-right-box" wx:if="{{ac==2}}">
+		<button class="cu-btn round bg-blue shadow" bindtap="team_bill" style="float:right;margin-right:10px;width:200rpx">
+			确认</button>
+	</view>
+	</block>
+</view>

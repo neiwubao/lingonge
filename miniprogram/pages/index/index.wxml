@@ -1,0 +1,89 @@
+<view class='top'>
+  <image src='cloud://lingqiange-yun.6c69-lingqiange-yun-1300812031/hbpic.jpg'></image>
+</view>
+<view class='la' style="padding-top:{{CustomBar}}px">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+  <view class='xia' ></view>
+  <view class='shuru'>
+    <icon type='search' size='16' color='#fff'></icon>
+    <input placeholder='请输入任务或企业' placeholder-class='placeholder'></input>
+  </view>
+</view>
+<view class='tab'>
+  <navigator class='tab_item' url="/pages/redlist/index">
+    <image src='../../images/p_red.png'></image>
+    <view>红名单</view>
+  </navigator>
+  <view class='tab_item' bindtap="identity">
+    <image src='../../images/p_qiandao.png'></image>
+    <view>切换身份</view>
+  </view>
+  <!-- <view class='tab_item' bindtap="qiandao">
+    <image src='../../images/p_qiandao.png'></image>
+    <view>签到送积分</view>
+  </view> -->
+  <navigator class='tab_item' url="/pages/blacklist/index">
+    <image src='../../images/p_hei.png'></image>
+    <view>黑名单</view>
+  </navigator>
+</view>
+<view class='content'>
+  <view class='qie'>
+    <view class='hua'>
+      <picker bindchange="quChange" value="{{index}}" range="{{area}}">
+        <view class="picker">
+          {{area[index]}}
+        </view>
+      </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+  <view class='qie'>
+    <view class='hua'>
+      <picker mode="multiSelector" 
+              bindchange="MultiChange" 
+              bindcolumnchange="MultiColumnChange" 
+              value="{{multiIndex}}"
+		          range="{{multiArray}}">
+        <view class="picker">
+          {{selectcat[1]}}
+			  </view>
+		  </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+  <view class='qie'>
+    <view class='hua'>
+      <picker bindchange="timeChange" value="{{index}}" range="{{time}}">
+        <view class="picker">
+          {{time[index]}}
+        </view>
+      </picker>
+      <view class='xia'></view>
+    </view>
+  </view>
+</view>
+<view class='hou'>
+  <view class='item' bindtap="goPage" data-id="{{item._id}}" wx:for="{{tasklist}}" data-id="{{item._id}}">
+    <view class='l'>
+      <view class='company'>{{item.catename}}</view>
+      <view class='dingwei'>
+        <image src='../../images/didian.png'></image>
+        <view class='address'>{{item.shi}} {{item.qu}}</view>
+      </view>
+      <view class='work_time'>工作时间：{{item.date1}}-{{item.date2}}</view>
+      <view class='money'>
+        工钱：
+        <text>{{item.money}}</text>元/人
+        <text wx:if="{{item.taskmodel==2}}">(带班费{{item.captain_fee}}元)</text>
+        </view>
+      </view>
+      <view class='r'>
+        <image src='cloud://lingqiange-yun.6c69-lingqiange-yun-1300812031/{{item.thumb}}'></image>
+      </view>
+  </view>
+</view>
